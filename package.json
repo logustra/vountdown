@@ -1,0 +1,34 @@
+{
+  "name": "@logustra/vountdown",
+  "version": "0.0.4",
+  "description": "A minimalist countdown component for vue.js",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vountdown.umd.js",
+  "module": "./dist/vountdown.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/vountdown.es.js",
+      "require": "./dist/vountdown.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --emitDeclarationOnly && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.21",
+    "@vitejs/plugin-vue": "^2.2.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.8.0",
+    "vue-tsc": "^0.29.8"
+  },
+  "dependencies": {
+    "vue": "^3.2.25"
+  },
+  "volta": {
+    "node": "14.17.1"
+  }
+}
