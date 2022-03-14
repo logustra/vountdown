@@ -7,7 +7,7 @@ import {
   computed,
   watch,
   onMounted,
-} from 'vue'
+} from 'vue-demi'
 
 export default defineComponent({
   name: 'Countdown',
@@ -25,7 +25,7 @@ export default defineComponent({
     time: {
       type: Number,
       required: true,
-      default: 0
+      default: 10000
     }
   },
   setup(props, { emit, slots }) {

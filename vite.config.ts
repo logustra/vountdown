@@ -4,6 +4,13 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
   plugins: [vue()],
+  /**
+   * DESC:
+   * dependency pre-bundling
+   */
+  optimizeDeps: {
+    exclude: ['vue-demi']
+  },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
