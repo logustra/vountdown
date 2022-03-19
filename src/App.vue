@@ -43,7 +43,7 @@
 import { ref } from 'vue'
 import Countdown from './components/countdown.vue'
 
-const time = ref(new Date('Jan 5, 2024 15:37:25').getTime())
+const time = ref(new Date('Jan 1, 2024 15:37:25').getTime())
 const auto = ref(false)
 
 function onStart () {
