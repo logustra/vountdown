@@ -1,1 +1,4 @@
-export { default as Countdown } from './components/countdown.vue'
+
+import Vountdown from './vountdown.vue'
+export default Vountdown
+export * from './vountdown.vue'

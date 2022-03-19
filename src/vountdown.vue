@@ -10,7 +10,7 @@ import {
 } from 'vue-demi'
 
 export default defineComponent({
-  name: 'Countdown',
+  name: 'Vountdown',
   props: {
     auto: {
       type: Boolean,
