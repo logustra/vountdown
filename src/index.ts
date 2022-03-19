@@ -1,1 +1,1 @@
-export { default as Countdown } from './components/countdown.vue';
+export { default as Countdown } from './components/countdown.vue'

@@ -15,7 +15,8 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'vountdown',
-      fileName: (format: string) => `vountdown.${format}.js`,
+      fileName: 'index',
+      formats: ['es', 'cjs', 'umd']
     },
     rollupOptions: {
       /**
@@ -23,7 +24,10 @@ export default defineConfig({
        * make sure to externalize deps that shouldn't be bundled
        * into your library
        */
-      external: ['vue'],
+      external: [
+        'vue', 
+        'vue-demi'
+      ],
       output: {
         /**
          * DESC:
@@ -31,7 +35,8 @@ export default defineConfig({
          * for externalized deps
          */
         globals: {
-          vue: 'Vue'
+          vue: 'Vue',
+          'vue-demi': 'VueDemi',
         }
       }
     }
