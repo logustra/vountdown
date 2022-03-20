@@ -1,5 +1,6 @@
 ## Vountdown
 
+[![Codecov](https://img.shields.io/codecov/c/github/logustra/vountdown)](https://codecov.io/github/logustra/vountdown?branch=master)
 [![Downloads](https://img.shields.io/npm/dm/@logustra/vountdown)](https://npmcharts.com/compare/@logustra/vountdown?minimal=true)
 [![Version](https://img.shields.io/npm/v/@logustra/vountdown)](https://www.npmjs.com/package/@logustra/vountdown)
 [![Gzip Size](https://img.badgesize.io/https://unpkg.com/@logustra/vountdown/dist/index.umd.js?compression=gzip)](https://unpkg.com/@logustra/vountdown/dist/index.umd.js)
