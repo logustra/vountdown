@@ -61,16 +61,7 @@ Vue.use(Vountdown);
 ### Examples
 ```html
 <vountdown 
-  :time="10000" 
-  v-slot="{ seconds }"
->
-  {{ seconds }} seconds.
-</vountdown>
-```
-
-```html
-<vountdown 
-  :time="new Date('Jan 1, 2024 15:37:25').getTime()" 
+  :time="new Date('Jan 1, 2024').getTime()" 
   v-slot="{ 
     days,
     hours,
@@ -79,6 +70,15 @@ Vue.use(Vountdown);
   }"
 >
   {{ days }} days {{ hours }} hours {{ minutes }} minutes {{ seconds }} seconds.
+</vountdown>
+```
+
+```html
+<vountdown 
+  :time="10000" 
+  v-slot="{ seconds }"
+>
+  {{ seconds }} seconds.
 </vountdown>
 ```
 

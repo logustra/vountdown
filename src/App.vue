@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Countdown 
+    <Vountdown 
       :auto="true"
       :time="time" 
       tag="div"
@@ -13,9 +13,9 @@
       }"
     >
       {{ isDone ? 'Done!' : `${days}d ${hours}h ${minutes}m ${seconds}s` }}
-    </Countdown>
+    </Vountdown>
 
-    <Countdown 
+    <Vountdown 
       :auto="auto"
       :time="10000" 
       tag="div"
@@ -28,7 +28,7 @@
       }"
     >
       {{ isDone ? 'Done!' : seconds }}
-    </Countdown>
+    </Vountdown>
 
     <button @click="auto = true">
       Start Countdown
@@ -41,9 +41,9 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue'
-import Countdown from './components/countdown.vue'
+import Vountdown from './vountdown.vue'
 
-const time = ref(new Date('Jan 1, 2024 15:37:25').getTime())
+const time = ref(new Date('Jan 1, 2024').getTime())
 const auto = ref(false)
 
 function onStart () {
