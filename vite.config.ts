@@ -41,6 +41,23 @@ export default defineConfig({
       }
     }
   },
+  test: {
+    include: ['test/**/*.test.ts'],
+    environment: 'happy-dom',
+    deps: {
+      inline: [
+        '@vue', 
+        'vue-demi'
+      ]
+    },
+    coverage: {
+      reporter: [
+        'text', 
+        'text-summary', 
+        'lcov'
+      ]
+    }
+  },
   resolve: {
     alias: [
       {
