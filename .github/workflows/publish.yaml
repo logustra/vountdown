@@ -1,4 +1,4 @@
-name: Publish Package
+name: Publish
 
 on:
   push:
@@ -8,6 +8,10 @@ on:
 jobs:
   publish-npm:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12, 14, 16]
 
     steps:
       - name: Checkout
@@ -20,11 +24,10 @@ jobs:
         with:
           version: latest
 
-      - name: Use Node.js 14
+      - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v2
         with:
-          node-version: 14
-          registry-url: https://registry.npmjs.org/
+          node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
 
       - name: Install dependencies
