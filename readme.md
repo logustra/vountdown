@@ -5,6 +5,7 @@
 [![Version](https://img.shields.io/npm/v/@logustra/vountdown)](https://www.npmjs.com/package/@logustra/vountdown)
 [![Gzip Size](https://img.badgesize.io/https://unpkg.com/@logustra/vountdown/dist/index.umd.js?compression=gzip)](https://unpkg.com/@logustra/vountdown/dist/index.umd.js)
 [![Licence](https://img.shields.io/npm/l/@logustra/vountdown)](https://www.npmjs.com/package/@logustra/vountdown)
+[![Code Style](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![Commitizen](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli)
 
 > A minimalist countdown component for vue.js 2-3
