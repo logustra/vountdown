@@ -1,6 +1,6 @@
 {
   "name": "@logustra/vountdown",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "A minimalist countdown component for vue.js 2-3",
   "keywords": [
     "vue",
@@ -42,9 +42,6 @@
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org"
   },
   "peerDependencies": {
     "@vue/composition-api": "^1.4.9",

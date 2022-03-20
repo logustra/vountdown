@@ -27,7 +27,7 @@ jobs:
           registry-url: https://registry.npmjs.org/
           cache: 'pnpm'
 
-      - name: Install Packages
+      - name: Install dependencies
         run: pnpm install
 
       - name: Generate a new github release
@@ -36,7 +36,10 @@ jobs:
         env:
           CONVENTIONAL_GITHUB_RELEASER_TOKEN: ${{ secrets.GIT_TOKEN }}
 
-      - name: Publish Package
+      - name: Build package
+        run: pnpm build
+
+      - name: Publish package
         run: npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
