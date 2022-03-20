@@ -44,8 +44,9 @@ Vue 3
 ```js
 import { createApp } from 'vue'
 import Vountdown from '@logustra/vountdown'
+import App from './app.vue'
 
-const app = createApp(...)
+const app = createApp(App)
 app.use(Vountdown)
 ```
 
@@ -55,8 +56,8 @@ import Vue from 'vue'
 import CompositionAPI from '@vue/composition-api'
 import Vountdown from '@logustra/vountdown'
 
-Vue.use(CompositionAPI);
-Vue.use(Vountdown);
+Vue.use(CompositionAPI)
+Vue.use(Vountdown)
 ```
 
 ### Examples

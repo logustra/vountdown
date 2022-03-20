@@ -11,11 +11,17 @@
     "ui",
     "frontend"
   ],
+  "license": "MIT",
+  "author": "Faizal Andyka",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/logustra/vountdown"
+  },
   "main": "./dist/index.cjs.js",
   "module": "./dist/index.esm.js",
+  "types": "./dist/types/index.d.ts",
   "unpkg": "./dist/index.umd.js",
   "jsdelivr": "./dist/index.umd.js",
-  "types": "./dist/types/index.d.ts",
   "exports": {
     ".": {
       "import": "./dist/index.es.js",
@@ -25,13 +31,7 @@
   "files": [
     "dist"
   ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/logustra/vountdown"
-  },
   "bugs": "https://github.com/logustra/vountdown/issues",
-  "author": "Faizal Andyka",
-  "license": "MIT",
   "scripts": {
     "prepare": "husky install",
     "clean:dist": "rimraf dist",
@@ -57,6 +57,9 @@
       "optional": true
     }
   },
+  "dependencies": {
+    "vue-demi": "^0.12.1"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "^0.18.9",
     "@commitlint/cli": "^16.2.3",
@@ -75,9 +78,6 @@
     "vitest": "^0.7.6",
     "vue": "^3.2.31",
     "vue-tsc": "^0.29.8"
-  },
-  "dependencies": {
-    "vue-demi": "^0.12.1"
   },
   "volta": {
     "node": "14.19.1"

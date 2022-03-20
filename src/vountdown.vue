@@ -1,12 +1,12 @@
 <script lang="ts">
-import { 
+import {
+  computed,
   defineComponent,
   h,
+  onMounted,
   ref,
   toRefs,
-  computed,
   watch,
-  onMounted,
 } from 'vue-demi'
 
 export default defineComponent({
@@ -15,31 +15,31 @@ export default defineComponent({
     auto: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     tag: {
       type: String,
       required: false,
-      default: 'span'
+      default: 'span',
     },
     time: {
       type: Number,
       required: true,
-      default: 10000
-    }
+      default: 10000,
+    },
   },
   setup(props, { emit, slots }) {
-    const { 
+    const {
       auto,
       tag,
-      time 
+      time,
     } = toRefs(props)
 
     /**
      * DES:
      * seconds, minutes, hours and days in milliseconds
      */
-    const SECONDS = 1000;
+    const SECONDS = 1000
     const MINUTES = 60 * SECONDS
     const HOURS = 60 * MINUTES
     const DAYS = 24 * HOURS
@@ -74,9 +74,8 @@ export default defineComponent({
        * DES:
        * use this formula when time is less than 1 day
        */
-      if (time.value < startEndTime.value) {
+      if (time.value < startEndTime.value)
         result = time.value + startEndTime.value
-      }
 
       return result
     })
@@ -91,8 +90,7 @@ export default defineComponent({
     const minutes = computed(() => Math.floor((distance.value % HOURS) / MINUTES))
     const seconds = computed(() => Math.floor((distance.value % MINUTES) / SECONDS))
 
-    
-    function timeout (milliseconds: number) {
+    function timeout(milliseconds: number) {
       return new Promise(resolve => setTimeout(resolve, milliseconds))
     }
 
@@ -110,20 +108,22 @@ export default defineComponent({
       }
     }
 
-    async function onUpdateCurrentTime () {
+    async function onUpdateCurrentTime() {
       if (auto.value) {
         if (distance.value > SECONDS) {
           await timeout (SECONDS)
           currentTime.value = Date.now()
-        } else {
-           /**
+        }
+        else {
+          /**
            * DES:
            * fires when the countdown has stopped
            */
           isDone.value = true
           emit(EVENT_DONE, isDone.value)
         }
-      } else {
+      }
+      else {
         /**
          * DES:
          * fires when the countdown has endded
@@ -142,7 +142,7 @@ export default defineComponent({
       () => currentTime.value,
       () => {
         onUpdateCurrentTime()
-      }
+      },
     )
 
     /**
@@ -153,7 +153,7 @@ export default defineComponent({
       () => auto.value,
       () => {
         onStart()
-      }
+      },
     )
 
     onMounted(() => {
@@ -167,8 +167,8 @@ export default defineComponent({
      * slots object being treated as props
      */
     return () => h(
-      tag.value, 
-      null, 
+      tag.value,
+      null,
       slots.default && slots.default({
         days: days.value,
         hours: hours.value,
@@ -176,9 +176,9 @@ export default defineComponent({
         seconds: seconds.value,
         isStart: isStart.value,
         isStop: isStop.value,
-        isDone: isDone.value
-      })
+        isDone: isDone.value,
+      }),
     )
-  } 
+  },
 })
 </script>

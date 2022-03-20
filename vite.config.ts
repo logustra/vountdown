@@ -9,14 +9,14 @@ export default defineConfig({
    * dependency pre-bundling
    */
   optimizeDeps: {
-    exclude: ['vue-demi']
+    exclude: ['vue-demi'],
   },
   build: {
     lib: {
       entry: resolve(__dirname, 'src/index.ts'),
       name: 'vountdown',
       fileName: 'index',
-      formats: ['es', 'cjs', 'umd']
+      formats: ['es', 'cjs', 'umd'],
     },
     rollupOptions: {
       /**
@@ -25,8 +25,8 @@ export default defineConfig({
        * into your library
        */
       external: [
-        'vue', 
-        'vue-demi'
+        'vue',
+        'vue-demi',
       ],
       output: {
         /**
@@ -35,35 +35,35 @@ export default defineConfig({
          * for externalized deps
          */
         globals: {
-          vue: 'Vue',
+          'vue': 'Vue',
           'vue-demi': 'VueDemi',
-        }
-      }
-    }
+        },
+      },
+    },
   },
   test: {
     include: ['test/**/*.test.ts'],
     environment: 'happy-dom',
     deps: {
       inline: [
-        '@vue', 
-        'vue-demi'
-      ]
+        '@vue',
+        'vue-demi',
+      ],
     },
     coverage: {
       reporter: [
-        'text', 
-        'text-summary', 
-        'lcov'
-      ]
-    }
+        'text',
+        'text-summary',
+        'lcov',
+      ],
+    },
   },
   resolve: {
     alias: [
       {
         find: '@',
-        replacement: resolve(__dirname, './src')
-      }
-    ]
-  }
+        replacement: resolve(__dirname, './src'),
+      },
+    ],
+  },
 })

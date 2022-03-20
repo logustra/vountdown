@@ -1,9 +1,6 @@
 <template>
   <div>
-    <Vountdown 
-      :auto="true"
-      :time="time" 
-      tag="div"
+    <Vountdown
       v-slot="{
         isDone,
         days,
@@ -11,21 +8,24 @@
         minutes,
         seconds
       }"
+      :auto="true"
+      :time="time"
+      tag="div"
     >
       {{ isDone ? 'Done!' : `${days}d ${hours}h ${minutes}m ${seconds}s` }}
     </Vountdown>
 
-    <Vountdown 
-      :auto="auto"
-      :time="10000" 
-      tag="div"
-      @start="onStart"
-      @stop="onStop"
-      @done="onDone"
+    <Vountdown
       v-slot="{
         isDone,
         seconds
       }"
+      :auto="auto"
+      :time="10000"
+      tag="div"
+      @start="onStart"
+      @stop="onStop"
+      @done="onDone"
     >
       {{ isDone ? 'Done!' : seconds }}
     </Vountdown>
@@ -46,15 +46,18 @@ import Vountdown from './vountdown.vue'
 const time = ref(new Date('Jan 1, 2024').getTime())
 const auto = ref(false)
 
-function onStart () {
+function onStart() {
+  // eslint-disable-next-line no-console
   console.log('onStart')
 }
 
-function onStop () {
+function onStop() {
+  // eslint-disable-next-line no-console
   console.log('onStop')
 }
 
-function onDone () {
+function onDone() {
+  // eslint-disable-next-line no-console
   console.log('onDone')
 }
 </script>
