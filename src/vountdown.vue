@@ -24,8 +24,8 @@ export default defineComponent({
     },
     time: {
       type: Number,
-      required: true,
-      default: 10000,
+      required: false,
+      default: 5000,
     },
   },
   setup(props, { emit, slots }) {
