@@ -39,25 +39,44 @@
   </div>
 </template>
 
-<script lang="ts" setup>
-import { ref } from 'vue'
+<script lang="ts">
+import {
+  defineComponent,
+  ref,
+} from 'vue'
 import Vountdown from './vountdown.vue'
 
-const time = ref(new Date('Jan 1, 2024').getTime())
-const auto = ref(false)
+export default defineComponent({
+  name: 'App',
+  components: {
+    Vountdown,
+  },
+  setup() {
+    const time = ref(new Date('Jan 1, 2024').getTime())
+    const auto = ref(false)
 
-function onStart() {
-  // eslint-disable-next-line no-console
-  console.log('onStart')
-}
+    function onStart() {
+      // eslint-disable-next-line no-console
+      console.log('onStart')
+    }
 
-function onStop() {
-  // eslint-disable-next-line no-console
-  console.log('onStop')
-}
+    function onStop() {
+      // eslint-disable-next-line no-console
+      console.log('onStop')
+    }
 
-function onDone() {
-  // eslint-disable-next-line no-console
-  console.log('onDone')
-}
+    function onDone() {
+      // eslint-disable-next-line no-console
+      console.log('onDone')
+    }
+
+    return {
+      time,
+      auto,
+      onStart,
+      onStop,
+      onDone,
+    }
+  },
+})
 </script>
