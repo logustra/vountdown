@@ -6,7 +6,7 @@ on:
       - v*
 
 jobs:
-  publish-npm:
+  publish:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 14.*
+          registry-url: https://registry.npmjs.org/
           cache: pnpm
 
       - name: Install dependencies
