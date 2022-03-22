@@ -36,12 +36,12 @@
     "prepare": "husky install",
     "clean:dist": "rimraf dist",
     "clean:coverage": "rimraf coverage",
-    "dev": "vite",
-    "build": "pnpm clean:dist && vite build && vue-tsc --emitDeclarationOnly",
+    "dev": "vite --mode dev",
+    "build": "pnpm clean:dist && vite build --mode prod && vue-tsc --emitDeclarationOnly",
     "preview": "vite preview",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "pnpm clean:coverage && vitest --coverage"
+    "test": "pnpm clean:coverage && vitest --coverage --mode test"
   },
   "config": {
     "commitizen": {
