@@ -61,29 +61,85 @@ Vue.use(CompositionAPI)
 Vue.use(Vountdown)
 ```
 
-### Examples
+### Basic Usage
 ```html
-<vountdown 
-  :time="new Date('Jan 1, 2024').getTime()" 
-  v-slot="{ 
-    days,
-    hours,
-    minutes,
-    seconds 
-  }"
->
-  {{ days }} days {{ hours }} hours {{ minutes }} minutes {{ seconds }} seconds.
-</vountdown>
+<template>
+  <vountdown 
+    :time="new Date('Jan 1, 2024').getTime()" 
+    v-slot="{ 
+      days,
+      hours,
+      minutes,
+      seconds 
+    }"
+  >
+    {{ days }} days {{ hours }} hours {{ minutes }} minutes {{ seconds }} seconds.
+  </vountdown>
+</template>
 ```
+[Demo →](https://codesandbox.io/s/magical-violet-h99oet?file=/src/components/basicUsage.vue)
 
+### On-demand
 ```html
-<vountdown 
-  :time="10000" 
-  v-slot="{ seconds }"
->
-  {{ seconds }} seconds.
-</vountdown>
+<template>
+  <button @click="auto = true">
+    <vountdown
+      :auto="auto"
+      :time="10000"
+      v-slot="{
+        isStart,
+        isDone,
+        seconds,
+      }"
+    >
+      <template v-if="isStart && !isDone">
+        Send again {{ seconds }} seconds later
+      </template>
+      <template v-else> Send OTP </template>
+    </vountdown>
+  </button>
+</template>
+
+<script>
+import { ref } from 'vue'
+export default {
+  setup() {
+    const auto = ref(false)
+
+    return {
+      auto
+    }
+  },
+}
+</script>
 ```
+[Demo →](https://codesandbox.io/s/magical-violet-h99oet?file=/src/components/onDemand.vue)
+
+## API
+### Props
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| tag | `string` | `span` | The tag name of the component root element | 
+| auto | `boolean` | `true` | Start countdown automatically |
+| time | `number` | `5000` | The time (in milliseconds) to count down from |
+
+### Events
+| Name | Parameters | Listen to | Description |
+|------|------|---------|-------------|
+| start | `(value)` | `@start` | Emitted after the countdown starts | 
+| stop | `(value)` | `@stop` | Emitted after the countdown has stopped |
+| done | `(value)` | `@done` | Emitted after the  countdown has endded |
+
+### Slots
+| Name | Description |
+|------|-------------|
+| days | Slot to display days | 
+| hours | Slot to display hours | 
+| minutes | Slot to display minutes | 
+| seconds | Slot to display seconds | 
+| isStart | Slot to display when the countdown starts | 
+| isStop | Slot to display when the countdown has stopped | 
+| isDone | Slot to display when the countdown has endded | 
 
 ## Cheer me on
 If you like my works, you can cheer me on here 😆
