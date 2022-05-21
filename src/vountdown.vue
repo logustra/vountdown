@@ -36,7 +36,7 @@ export default defineComponent({
     } = toRefs(props)
 
     /**
-     * DES:
+     * DESC:
      * seconds, minutes, hours and days in milliseconds
      */
     const SECONDS = 1000
@@ -45,7 +45,7 @@ export default defineComponent({
     const DAYS = 24 * HOURS
 
     /**
-     * DES:
+     * DESC:
      * event listeners
      */
     const EVENT_START = 'start'
@@ -57,22 +57,22 @@ export default defineComponent({
     const isDone = ref(false)
 
     /**
-     * DES:
+     * DESC:
      * get today's date and time
      */
     const currentTime = ref(Date.now())
     const startEndTime = ref(Date.now())
 
     /**
-     * DES:
+     * DESC:
      * find the distance between now and the count down date
      */
     const endTime = computed(() => {
       let result = time.value
 
       /**
-       * DES:
-       * use this formula when time is less than 1 day
+       * DESC:
+       * use this formula when the time is less than 1 day
        */
       if (time.value < startEndTime.value)
         result = time.value + startEndTime.value
@@ -82,7 +82,7 @@ export default defineComponent({
     const distance = computed(() => endTime.value - currentTime.value)
 
     /**
-     * DES:
+     * DESC:
      * time calculations for days, hours, minutes and seconds
      */
     const days = computed(() => Math.floor(distance.value / DAYS))
@@ -100,7 +100,7 @@ export default defineComponent({
         startEndTime.value = Date.now() - 1
 
         /**
-         * DES:
+         * DESC:
          * fires immediately when the countdown starts
          */
         isStart.value = true
@@ -116,7 +116,7 @@ export default defineComponent({
         }
         else {
           /**
-           * DES:
+           * DESC:
            * fires when the countdown has stopped
            */
           isDone.value = true
@@ -125,7 +125,7 @@ export default defineComponent({
       }
       else {
         /**
-         * DES:
+         * DESC:
          * fires when the countdown has endded
          */
         isStart.value = false
@@ -135,7 +135,7 @@ export default defineComponent({
     }
 
     /**
-     * DES:
+     * DESC:
      * update the count down every 1 second
      */
     watch(
@@ -146,7 +146,7 @@ export default defineComponent({
     )
 
     /**
-     * DES:
+     * DESC:
      * fires immediately when the props auto changes
      */
     watch(

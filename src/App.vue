@@ -8,7 +8,7 @@
         minutes,
         seconds
       }"
-      :auto="true"
+      auto
       :time="time"
       tag="div"
     >
@@ -20,7 +20,7 @@
         isDone,
         seconds
       }"
-      :auto="auto"
+      auto
       :time="10000"
       tag="div"
       @start="onStart"
