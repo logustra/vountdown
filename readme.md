@@ -77,7 +77,7 @@ Vue.use(Vountdown)
   </vountdown>
 </template>
 ```
-[Demo →](https://codesandbox.io/s/magical-violet-h99oet?file=/src/components/basicUsage.vue)
+[Demo →](https://stackblitz.com/edit/vitejs-vite-utq8t4?file=src%2Fcomponents%2FbasicUsage.vue)
 
 ### On-demand
 ```html
@@ -113,7 +113,7 @@ export default {
 }
 </script>
 ```
-[Demo →](https://codesandbox.io/s/magical-violet-h99oet?file=/src/components/onDemand.vue)
+[Demo →](https://stackblitz.com/edit/vitejs-vite-utq8t4?file=src%2Fcomponents%2FonDemand.vue)
 
 ## API
 ### Props
