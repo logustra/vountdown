@@ -1,6 +1,6 @@
 {
   "name": "@logustra/vountdown",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A minimalist countdown component for vue.js 2-3",
   "keywords": [
     "vue",
